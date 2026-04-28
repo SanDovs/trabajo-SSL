@@ -78,7 +78,7 @@ while continuar != 0:
     elif opc == 4:
         print("---TAREAS ACTIVAS---")
         tamanioCola(cola)
-        
+        pass
     
     
     #--------------------------------------------------------#
