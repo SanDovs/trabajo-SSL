@@ -3,6 +3,8 @@ from tad_gestionOT import *
 from tadCola import *
 from Fun_crearOrden import *
 from Fun_modiCronograma import *
+from Fun_eliminarOT import *
+from Fun_mostrarOT import *
 
 
 
@@ -46,6 +48,7 @@ while continuar != 0:
         #crea una orden nueva
         print("---CREANDO NUEVA ORDEN---")  
         orden = crearOrdenT()
+        gestion.append(orden)
         cola.append(orden)
         if orden is not None:
             agregarOT(gestion, orden)
@@ -69,16 +72,17 @@ while continuar != 0:
     
     elif opc == 3:
         print("---ELIMINANDO TAREAS---")
-        pass
-    
+        eliminar = eliminandoOT(gestion)
+        if eliminar:
+            gestion.remove(eliminar)
     
     #--------------------------------------------------------#
     
     
     elif opc == 4:
         print("---TAREAS ACTIVAS---")
-        tamanioCola(cola)
-        pass
+        MostrarOT(gestion)
+        #me falta terminar
     
     
     #--------------------------------------------------------#
