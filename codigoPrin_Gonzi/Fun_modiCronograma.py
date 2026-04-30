@@ -2,7 +2,6 @@ from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
 from Fun_crearOrden import *
-from datetime import datetime
 
 def cambiarCronograma(gestion):
     
