@@ -22,6 +22,9 @@ def cargarOT(ot, id_m, equipo, sector, tec, fecha, hora):
     ot[3] = tec
     ot[4] = fecha
     ot[5] = hora
+    
+def verOT(ot):
+    return f"ID Máquina: {verId(ot)}\nEquipo: {verEquipo(ot)}\nSector: {verSector(ot)}\nTécnico: {verTecnico(ot)}\nFecha: {verFecha(ot)}\nHora: {verHora(ot)}"
 
 #Operaciones de Selección
 
@@ -73,6 +76,11 @@ def modiFecha(ot, nuevaFecha):
 
 def modiHora(ot, nuevaHora):
     # Modifica la hora de inicio programada de la orden.
+    ot[5] = nuevaHora
+    
+def modiCronograma(ot, nuevaFecha, nuevaHora):
+    # Modifica tanto la fecha como la hora programada de la orden.
+    ot[4] = nuevaFecha
     ot[5] = nuevaHora
 
 #Operación de Asignación
