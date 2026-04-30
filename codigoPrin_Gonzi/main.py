@@ -1,3 +1,4 @@
+#librerias, modulos
 import os
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
@@ -7,7 +8,8 @@ from Fun_modiCronograma import *
 from Fun_eliminarOT import *
 from Fun_mostrarOT import *
 from Fun_reproFecha import *
-
+from Fun_depuracion import *
+from Fun_colaIntervencion import *
 
 
 
@@ -22,8 +24,8 @@ while continuar != 0:
     print("---menu---")
     print("1 - registrar nuevas ordenes")
     print("2 - modificar cronograma")
-    print("3 - cancelar tareas")
-    print("4 - mostrar todas las ordenes activas")
+    print("3 - finalizar/cancelar tareas")
+    print("4 - ordenes activas")
     print("5 - reprogramar tareas")
     print("6 - depurar")
     print("0 - finalizar")
@@ -73,10 +75,12 @@ while continuar != 0:
     
     
     elif opc == 3:
-        print("---ELIMINANDO TAREAS---")
+        
+        print("---FINALIZANDO/CANCELANDO TAREAS---")
         eliminar = eliminandoOT(gestion)
         if eliminar:
             print("proceso completo")
+            
         else:
             print("proceso no realizado")
             
@@ -85,6 +89,7 @@ while continuar != 0:
     
     
     elif opc == 4:
+        
         print("---TAREAS ACTIVAS---")
         MostrarOT(gestion)    
     
@@ -92,6 +97,7 @@ while continuar != 0:
     
     
     elif opc == 5:
+        
         print("---REPROGRAMANDO ORDENES POR FECHA---")
         reprogramarPorFecha(gestion)
     
@@ -100,7 +106,26 @@ while continuar != 0:
     
     
     elif opc == 6:
-        pass
-    
-    
+        
+        print("---seleccion una opcion---")
+        print("A - baja por sector")
+        print("B - cola de intervencion")
+        print("C - salir")
+        
+        option = input("opcion: ").upper()
+        
+        if option == "C":
+            print("saliendo...")
+            continue
+        
+        elif option == "A": 
+            depurar(gestion)
+        
+        elif option == "B":
+            colaIntervencion(gestion, cola)
+            
+            
     #--------------------------------------------------------#
+    else:
+        print("opcion inexistente, vueva a intentarlo")
+        continue

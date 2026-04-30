@@ -17,6 +17,7 @@ def MostrarOT(gestion):
     for i in range(tamanio(gestion)):
         orden = recuperarOT(gestion, i)
         print(verOT(orden))
+        print("----------------------------")
         
     return True
         
