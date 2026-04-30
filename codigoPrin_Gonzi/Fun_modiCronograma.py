@@ -15,16 +15,14 @@ def cambiarCronograma(gestion):
         print("valor ingresado incorrecto")
         return False
     
-    ordenEncontrada = False
     
     for ord in range(tamanio(gestion)):
         orden = recuperarOT(gestion, ord)
         
         if verId(orden) == id_maq:
-            ordenEncontrada = True
+            
             print("orden encontrada:")
             print(verOT(orden))
-            
             
             try:
                 fecha = input("ingrese la nueva fecha programada (dd/mm/yyyy): ")
@@ -40,6 +38,6 @@ def cambiarCronograma(gestion):
             print(verOT(orden))
             return True
         
-        else:
-            print("no se encontro la orden")
-            return False
+    
+    print("no se encontro la orden")
+    return False

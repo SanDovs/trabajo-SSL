@@ -66,7 +66,7 @@ while continuar != 0:
     elif opc == 2:
         
         print("---MODIFICANDO CRONOGRAMA---")
-        nuevoCronograma = cambiarCronograma(gestion)
+        cambiarCronograma(gestion)
     
     
     #--------------------------------------------------------#
@@ -86,9 +86,7 @@ while continuar != 0:
     
     elif opc == 4:
         print("---TAREAS ACTIVAS---")
-        MostrarOT(gestion)
-        #me falta terminar
-    
+        MostrarOT(gestion)    
     
     #--------------------------------------------------------#
     
