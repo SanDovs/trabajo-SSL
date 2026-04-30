@@ -6,6 +6,7 @@ from Fun_crearOrden import *
 from Fun_modiCronograma import *
 from Fun_eliminarOT import *
 from Fun_mostrarOT import *
+from Fun_reproFecha import *
 
 
 
@@ -93,7 +94,8 @@ while continuar != 0:
     
     
     elif opc == 5:
-        pass
+        print("---REPROGRAMANDO ORDENES POR FECHA---")
+        reprogramarPorFecha(gestion)
     
     
     #--------------------------------------------------------#
