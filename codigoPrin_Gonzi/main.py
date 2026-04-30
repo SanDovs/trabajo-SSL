@@ -1,3 +1,4 @@
+import os
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
@@ -32,6 +33,8 @@ while continuar != 0:
         print("valor ingresado incorrecto")
         continue
     
+    os.system("cls")
+    
     #--------------------------------------------------------#
         
         
@@ -45,13 +48,11 @@ while continuar != 0:
     
     
     elif opc == 1:
-        #crea una orden nueva
-        print("---CREANDO NUEVA ORDEN---")  
+        #crea una orden nueva 
         orden = crearOrdenT()
-        gestion.append(orden)
-        cola.append(orden)
         if orden is not None:
             agregarOT(gestion, orden)
+            encolar(cola, orden)
             print("orden creada exitosamente")
             print(verOT(orden))
         else:
@@ -74,7 +75,10 @@ while continuar != 0:
         print("---ELIMINANDO TAREAS---")
         eliminar = eliminandoOT(gestion)
         if eliminar:
-            gestion.remove(eliminar)
+            print("proceso completo")
+        else:
+            print("proceso no realizado")
+            
     
     #--------------------------------------------------------#
     

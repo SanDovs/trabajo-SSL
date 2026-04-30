@@ -2,8 +2,10 @@ from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
 from datetime import datetime
+import os
 
 def crearOrdenT():
+    print("---CREANDO NUEVA ORDEN---") 
     #creando una orden nueva
     nuevaOrden = crearOT()
     #ingresando datos

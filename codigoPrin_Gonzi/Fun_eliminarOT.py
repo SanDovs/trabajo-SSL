@@ -26,3 +26,6 @@ def eliminandoOT(gestion):
             else:
                 print("eliminación cancelada")
                 return False  
+            
+    print("no se encontro una orden")
+    return False

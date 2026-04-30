@@ -7,9 +7,16 @@ from Fun_eliminarOT import *
 
 
 def MostrarOT(gestion):
-    if len(gestion) == 0:
+    
+    if estaVacia(gestion):
         print("No hay tareas en el sistema.")
-    else:
-        print("Tareas en el sistema:")
-        for tarea in gestion:
-            pass
+        return False
+    
+    print("Tareas en el sistema:")
+    
+    for i in range(tamanio(gestion)):
+        orden = recuperarOT(gestion, i)
+        print(verOT(orden))
+        
+    return True
+        
