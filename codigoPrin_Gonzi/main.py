@@ -122,7 +122,7 @@ while continuar != 0:
             depurar(gestion)
         
         elif option == "B":
-            colaIntervencion(gestion, cola)
+            colaIntervencion(gestion)
             
             
     #--------------------------------------------------------#

@@ -14,7 +14,7 @@ def cambiarCronograma(gestion):
     except ValueError:
         print("valor ingresado incorrecto")
         return False
-    
+        
     
     for ord in range(tamanio(gestion)):
         orden = recuperarOT(gestion, ord)
