@@ -11,8 +11,7 @@ def depurar(gestion):
         print("no hay ordenes")
         return False
     
-    
-    sector = input("ingrese el sector: ")
+    sector = input("ingrese el sector: ").lower()
     
     eliminada = False
     
@@ -23,7 +22,7 @@ def depurar(gestion):
         if verSector(orden) == sector:
             
             print(verOT(orden))
-            elim = input("desea eliminar esta orden? (s/n)").lower()
+            elim = input("desea eliminar esta orden? (s/n): ").lower()
             
             if elim == "s":
                 eliminarOT(gestion, orden)

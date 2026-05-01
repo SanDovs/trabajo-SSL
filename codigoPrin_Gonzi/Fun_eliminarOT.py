@@ -18,8 +18,8 @@ def eliminandoOT(gestion):
             print("orden encontrada:")
             print(verOT(orden))
             
-            confirmacion = input("¿Desea eliminar esta orden? (s/n): ")
-            if confirmacion.lower() == 's':
+            confirmacion = input("¿Desea eliminar esta orden? (s/n): ").lower()
+            if confirmacion == 's':
                 eliminarOT(gestion, orden)
                 print("orden eliminada exitosamente")
                 return True

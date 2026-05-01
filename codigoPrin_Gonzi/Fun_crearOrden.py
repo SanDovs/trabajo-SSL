@@ -14,9 +14,9 @@ def crearOrdenT():
     except ValueError:
         print("error, tipo de dato incorrecto")
         return None
-    tecnico = input("ingrese el tecnico asignado: ")
-    equipo = input("ingrese el nombre del equipo: ")
-    sector = input("ingrese el sector: ")
+    tecnico = input("ingrese el tecnico asignado: ").lower()
+    equipo = input("ingrese el nombre del equipo: ").lower()
+    sector = input("ingrese el sector: ").lower()
     try:     
         fecha = input("ingrese la fecha programada (dd/mm/yyyy): ")
         hora = input("ingrese la hora programada (hh:mm): ")
@@ -25,7 +25,7 @@ def crearOrdenT():
     except ValueError:
         print("error, vuelva a intentarlo")
         return None
-    
+    #cargamos la orden con los datos ingresados
     cargarOT(nuevaOrden, id_m, equipo, sector, tecnico, fechaProg, horaProg)
     return nuevaOrden
     
