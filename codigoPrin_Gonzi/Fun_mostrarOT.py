@@ -11,6 +11,11 @@ def MostrarOT(gestion):
     if estaVacia(gestion):
         print("No hay tareas en el sistema.")
         return False
+
+    #sector = input("ingrese el sector a mostrar: ").lower()
+    # orden = recuperarOT(gestion, i)
+    #if sector == verSector(orden).lower():
+
     
     print("Tareas en el sistema:")
     

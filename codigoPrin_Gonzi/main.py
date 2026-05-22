@@ -81,7 +81,6 @@ while continuar != 0:
         orden = crearOrdenT(gestion)
         if orden is not None:
             agregarOT(gestion, orden)
-            encolar(cola, orden)
             print("orden creada exitosamente")
             print(verOT(orden))
         else:
