@@ -1,6 +1,7 @@
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
+from cargados import *
 
 
 def eliminandoOT(gestion):

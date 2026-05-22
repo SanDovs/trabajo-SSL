@@ -26,9 +26,9 @@ def crearOrdenT(gestion):
             return None
  
     # Si el for termino sin encontrar el ID, es unico y podemos continuar
-    tecnico = input("ingrese el tecnico asignado: ")
-    equipo = input("ingrese el nombre del equipo: ")
-    sector = input("ingrese el sector: ")
+    tecnico = input("ingrese el tecnico asignado: ").lower()
+    equipo = input("ingrese el nombre del equipo: ").lower()
+    sector = input("ingrese el sector: ").lower()
  
     try:
         fecha = input("ingrese la fecha programada (dd/mm/yyyy): ")

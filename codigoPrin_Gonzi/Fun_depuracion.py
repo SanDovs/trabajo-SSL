@@ -1,6 +1,7 @@
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
+from cargados import *
 
 
 def depurar(gestion):
@@ -11,7 +12,7 @@ def depurar(gestion):
         print("no hay ordenes")
         return False
 
-    sector = input("ingrese el sector: ")
+    sector = input("ingrese el sector: ").lower()
 
     eliminada = False
 
@@ -34,7 +35,7 @@ def depurar(gestion):
     while i >= 0:
         orden = recuperarOT(gestion, i)
 
-        if verSector(orden) == sector:
+        if verSector(orden).lower() == sector:
             print(verOT(orden))
             elim = input("desea eliminar esta orden? (s/n): ").lower()
 

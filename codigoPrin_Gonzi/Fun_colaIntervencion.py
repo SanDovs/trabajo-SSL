@@ -1,6 +1,7 @@
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
+from cargados import *
 from datetime import datetime
 
 
@@ -43,7 +44,7 @@ def colaIntervencion(gestion):
     # Usamos desencolar() para sacar de a uno desde el frente,
     # que es la única forma "correcta" de recorrer una cola.
     print(f"\nordenes del dia {fechaBuscada}:")
-    print("=" * 30)
+    print("-" * 30)
     
     turno = 1
     while not esVaciaCola(colaDelDia):

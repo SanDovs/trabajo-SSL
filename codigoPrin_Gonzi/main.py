@@ -10,6 +10,8 @@ from Fun_mostrarOT import *
 from Fun_reproFecha import *
 from Fun_depuracion import *
 from Fun_colaIntervencion import *
+from cargados import *
+
 
 #usos del tad:
 
@@ -42,6 +44,7 @@ print("---INICIALIZACION DEL PROGRAMA")
 continuar = 1
 cola = crearCola()
 gestion = crearGestion()
+preCargarDatos(gestion) #datos precargados para la prueba
 
 while continuar != 0:
     print("---menu---")
@@ -123,6 +126,7 @@ while continuar != 0:
         
         print("---REPROGRAMANDO ORDENES POR FECHA---")
         reprogramarPorFecha(gestion)
+
     
     
     #--------------------------------------------------------#

@@ -12,10 +12,7 @@ def reprogramarPorFecha(gestion):
 
     try:
         fecha_vieja = input("Ingrese la fecha a reprogramar (dd/mm/yyyy): ")
-        fecha_nueva = input("Ingrese la nueva fecha (dd/mm/yyyy): ")
-
         fechaVieja = datetime.strptime(fecha_vieja, "%d/%m/%Y").date()
-        fechaNueva = datetime.strptime(fecha_nueva, "%d/%m/%Y").date()
 
     except ValueError:
         print("Formato de fecha incorrecto")
@@ -32,6 +29,12 @@ def reprogramarPorFecha(gestion):
             print("orden a reprogramar:")
             print(verOT(orden))
             print("---------------------------")
+            try:
+                fecha_nueva = input("Ingrese la nueva fecha (dd/mm/yyyy): ")
+                fechaNueva = datetime.strptime(fecha_nueva, "%d/%m/%Y").date()
+            except ValueError:
+                print("formato de fecha incorrecto")
+                return False
 
             hora_actual = verHora(orden)
             modiCronograma(orden, fechaNueva, hora_actual)
