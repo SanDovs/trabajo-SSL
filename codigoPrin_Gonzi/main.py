@@ -11,6 +11,29 @@ from Fun_reproFecha import *
 from Fun_depuracion import *
 from Fun_colaIntervencion import *
 
+#usos del tad:
+
+# tadOrdenDeTrabajo:
+# crearOrdenT(): crea una nueva orden de trabajo
+# verOT(): muestra la información de una orden
+# verID(): obtiene el ID de una orden
+# verEquipo(): obtiene el equipo asociado a una orden
+# verTecnico(): obtiene el técnico asignado a una orden
+# verFecha(): obtiene la fecha programada de una orden
+# cambiarCronograma(): modifica el cronograma de una orden.
+
+# tad_gestionOT:
+# crearGestion(): crea una nueva gestión de órdenes
+# agregarOT(): agrega una orden a la gestión
+# recuperarOT(): recupera una orden de la gestión
+# tamanio(): obtiene el tamaño de la gestión
+# estaVacia(): verifica si la gestión está vacía.
+
+# tadCola:
+# crearCola(): crea una nueva cola
+# encolar(): agrega un elemento a la cola
+# desencolar(): elimina un elemento de la cola
+# esVaciaCola(): verifica si la cola está vacía.
 
 
 print("---INICIALIZACION DEL PROGRAMA")
@@ -51,8 +74,8 @@ while continuar != 0:
     
     
     elif opc == 1:
-        #crea una orden nueva 
-        orden = crearOrdenT()
+       
+        orden = crearOrdenT(gestion)
         if orden is not None:
             agregarOT(gestion, orden)
             encolar(cola, orden)

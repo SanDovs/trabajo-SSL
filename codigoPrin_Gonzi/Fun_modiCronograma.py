@@ -1,7 +1,7 @@
 from tadOrdenDeTrabajo import *
 from tad_gestionOT import *
 from tadCola import *
-from Fun_crearOrden import *
+from datetime import datetime
 
 def cambiarCronograma(gestion):
     
@@ -14,21 +14,23 @@ def cambiarCronograma(gestion):
     except ValueError:
         print("valor ingresado incorrecto")
         return False
-        
     
+    ordenEncontrada = False
+    
+    # Recorremos TODAS las órdenes antes de decidir si se encontró o no
     for ord in range(tamanio(gestion)):
         orden = recuperarOT(gestion, ord)
         
         if verId(orden) == id_maq:
-            
+            ordenEncontrada = True
             print("orden encontrada:")
             print(verOT(orden))
             
             try:
                 fecha = input("ingrese la nueva fecha programada (dd/mm/yyyy): ")
-                hora = input("ingrese la nueva hora programada (hh:mm): ")
+                hora  = input("ingrese la nueva hora programada (hh:mm): ")
                 nuevaFecha = datetime.strptime(fecha, "%d/%m/%Y").date()
-                nuevaHora = datetime.strptime(hora, "%H:%M").time()
+                nuevaHora  = datetime.strptime(hora,  "%H:%M").time()
             except ValueError:
                 print("datos ingresados incorrectos")
                 return False
@@ -37,7 +39,8 @@ def cambiarCronograma(gestion):
             print("cronograma modificado exitosamente")
             print(verOT(orden))
             return True
-        
-    
-    print("no se encontro la orden")
-    return False
+
+    # Este bloque se ejecuta SOLO si el for terminó sin encontrar nada
+    if not ordenEncontrada:
+        print("no se encontro la orden")
+        return False

@@ -3,21 +3,34 @@ from tad_gestionOT import *
 from tadCola import *
 from datetime import datetime
 import os
-
-def crearOrdenT():
-    print("---CREANDO NUEVA ORDEN---") 
-    #creando una orden nueva
+ 
+def crearOrdenT(gestion):
+    # Recibe gestion como parametro para desp ver si hay una orden con el mismo ID
+    print("---CREANDO NUEVA ORDEN---")
+ 
     nuevaOrden = crearOT()
-    #ingresando datos
+ 
     try:
         id_m = int(input("ingrese el ID de la máquina: "))
     except ValueError:
         print("error, tipo de dato incorrecto")
         return None
-    tecnico = input("ingrese el tecnico asignado: ").lower()
-    equipo = input("ingrese el nombre del equipo: ").lower()
-    sector = input("ingrese el sector: ").lower()
-    try:     
+ 
+    # Verificacion de ID duplicado:
+    # Recorremos todas las ordenes existentes en la gestion
+    # Si alguna ya tiene ese ID, avisamos y cancelamos la creacion
+    for i in range(tamanio(gestion)):
+        orden = recuperarOT(gestion, i)
+        if verId(orden) == id_m:
+            print(f"error: ya existe una orden con el ID {id_m}")
+            return None
+ 
+    # Si el for termino sin encontrar el ID, es unico y podemos continuar
+    tecnico = input("ingrese el tecnico asignado: ")
+    equipo = input("ingrese el nombre del equipo: ")
+    sector = input("ingrese el sector: ")
+ 
+    try:
         fecha = input("ingrese la fecha programada (dd/mm/yyyy): ")
         hora = input("ingrese la hora programada (hh:mm): ")
         fechaProg = datetime.strptime(fecha, "%d/%m/%Y").date()
@@ -25,8 +38,6 @@ def crearOrdenT():
     except ValueError:
         print("error, vuelva a intentarlo")
         return None
-    #cargamos la orden con los datos ingresados
+ 
     cargarOT(nuevaOrden, id_m, equipo, sector, tecnico, fechaProg, horaProg)
     return nuevaOrden
-    
-    
