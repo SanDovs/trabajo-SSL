@@ -32,7 +32,7 @@ def colaIntervencion(gestion):
         
         # Si la fecha coincide, armamos el resumen y lo encolamos
         if verFecha(orden) == fechaBuscada:
-            resumen = [verEquipo(orden), verTecnico(orden)]
+            resumen = (verEquipo(orden), verTecnico(orden))
             encolar(colaDelDia, resumen)
     
     # Si no encontramos ninguna orden para ese día, avisamos y salimos
@@ -48,10 +48,10 @@ def colaIntervencion(gestion):
     
     turno = 1
     while not esVaciaCola(colaDelDia):
-        item = desencolar(colaDelDia)
+        equipo, tecnico = desencolar(colaDelDia)
         print(f"Turno {turno}:")
-        print(f"  Equipo  : {item[0]}")
-        print(f"  Tecnico : {item[1]}")
+        print(f"  Equipo  : {equipo}")
+        print(f"  Tecnico : {tecnico}")
         print("-" * 30)
         turno += 1
     

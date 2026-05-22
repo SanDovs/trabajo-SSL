@@ -26,9 +26,10 @@ def depurar(gestion):
             elim = input("desea eliminar esta orden? (s/n): ").lower()
 
             if elim == "s":
-                eliminarOT(gestion, orden)
-                print(f"orden con id {verId(orden)} eliminada")
+                
+                print(f"eliminando orden con id: {verId(orden)}")
                 print("---------------------------")
+                eliminarOT(gestion, orden)
                 eliminada = True
                 # NO hacemos i -= 1 extra: al eliminar, la lista
                 # se achico y el indice i ahora apunta al siguiente
