@@ -16,20 +16,6 @@ def depurar(gestion):
 
     eliminada = False
 
-    # Usamos while recorriendo AL REVES (de la ultima a la primera).
-    # Por que al reves? Porque si eliminamos un elemento, los indices
-    # de lo que falta revisar (que estan ADELANTE, es decir en posiciones
-    # menores) no se mueven. Si fueramos hacia adelante y eliminamos,
-    # los indices se desplazan y nos saltariamos ordenes.
-    #
-    # Por que while y no for?
-    # Con while tenemos control manual del indice.
-    # Cuando eliminamos, i -= 1 porque la lista se achico en uno
-    # y la posicion anterior ahora apunta a un elemento diferente.
-    # Cuando no eliminamos, i -= 1 igualmente para seguir hacia atras.
-    # En este caso ambas ramas hacen i -= 1, pero la separacion
-    # deja el codigo claro y extensible.
-
     i = tamanio(gestion) - 1  # arrancamos desde el ultimo
 
     while i >= 0:
